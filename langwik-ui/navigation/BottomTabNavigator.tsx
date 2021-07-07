@@ -11,13 +11,14 @@ import * as React from 'react';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabMyCollectionScreen from '../screens/TabMyCollectionScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
+import TabQuizScreen from '../screens/TabQuizScreen';
 import {
     BottomTabParamList, TabFriendsParamList,
     TabMyCollectionParamList,
     TabProfileParamList,
     TabQuizParamList,
 } from '../types';
+import {LogoTitle} from "../components/LogoTitle";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -76,7 +77,10 @@ function TabMyCollectionNavigator() {
       <TabMyCollectionStack.Screen
         name="My collection"
         component={TabMyCollectionScreen}
-        options={{ headerTitle: 'My collection' }}
+        options={{
+            headerRight: props => <LogoTitle {...props} />,
+            headerTitle: 'My collection',
+        }}
       />
     </TabMyCollectionStack.Navigator>
   );
@@ -89,8 +93,11 @@ function TabQuizNavigator() {
     <TabQuizStack.Navigator>
       <TabQuizStack.Screen
         name="Quiz"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Quiz' }}
+        component={TabQuizScreen}
+        options={{
+            headerRight: props => <LogoTitle {...props} />,
+            headerTitle: 'Quiz',
+        }}
       />
     </TabQuizStack.Navigator>
   );
@@ -104,8 +111,11 @@ function TabFriendsNavigator() {
     <TabFriendsStack.Navigator>
       <TabFriendsStack.Screen
         name="Friends"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Friends' }}
+        component={TabQuizScreen}
+        options={{
+            headerTitle: 'Friends',
+            headerRight: props => <LogoTitle {...props} />,
+        }}
       />
     </TabFriendsStack.Navigator>
   );
@@ -119,8 +129,11 @@ function TabProfileNavigator() {
     <TabProfileStack.Navigator>
       <TabProfileStack.Screen
         name="Profile"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Profile' }}
+        component={TabQuizScreen}
+        options={{
+            headerTitle: 'Profile',
+            headerRight: props => <LogoTitle {...props} />,
+        }}
       />
     </TabProfileStack.Navigator>
   );
