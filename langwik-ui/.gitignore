@@ -1,0 +1,27 @@
+node_modules/
+.expo/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+## System and generated files
+.idea
+.DS_Store
+.sass-cache
+
+## Directories
+log/
+dist/
+coverage/
+reports/
+.gradle
+## Files
+yarn.lock
+yarn-error.log
+npm-debug.log
+## package-lock.json
