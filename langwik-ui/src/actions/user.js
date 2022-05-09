@@ -1,0 +1,14 @@
+import Types from './types';
+
+export const saveUserToken = (token: string) => ({
+  type: Types.SAVE_USER_TOKEN,
+  token,
+});
+export const setUser = (user: Object) => ({
+  type: Types.SAVE_USER,
+  user,
+});
+export const setRecentSearch = (recentSearch) => ({
+  type: Types.RECENT_SEARCH,
+  recentSearch,
+});
